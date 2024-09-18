@@ -1,5 +1,5 @@
 `# Tugas1
-#JOBSHEET 1
+<h1><b>JOBSHEET 1</b></h1>
 Menggunakan Konsep Kelas dan Objek dalam PHP
 
 #Latihan
@@ -146,7 +146,7 @@ Sintaks yang digunakan dalam penulisan metode ini sebegai berikut:
 
 echo $dosen1->tampilkanDosen();
 
-JOBSHEET 2
+<h1><b>JOBSHEET 2</b></h1>
 Implementasi Prinsip OOP dalam PHP
 1.	Membuat Class dan Object
 •	Membuat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan.
@@ -500,6 +500,329 @@ Output yang dihasilkan sebagai berikut:
 
 Mahasiswa Anita bisa melihat nilai
 Dosen Dinda bisa memasukkan nilai mahasiswa
+
+<h1><b>JOBSHEET 3</b></h1>
+Menerapkan Konsep Inheritance, Polymorphism, Encapsulation, dan Abstraction dalam PHP
+
+A.	Latihan
+1.	Inheritance
+•	Membuat kelas person dengan atribut nama dan metode getName()
+a.	Membuat kelas person
+Kelas merupakan struktur atau blueprint yang mendefinisikan atribut dan metode yang dimiliki oleh suatu objek.
+Untuk membuat kelas baru, digunakanlah sintaks sebagai berikut:
+
+class Person{}
+ 
+b.	Membuat protected properties
+Atribut atau properties adalah variabel yang menyimpan data untuk untuk objek.
+Protected properties merupakan properties yang hanya dapat di akses di kelas itu sendiri dan kelas turunannya.
+Untuk membuat protected properties, digunakanlah sintaks sebagai berikut:
+
+protected $nama;
+
+c.	Membuat konstruktor
+Konstruktor digunakan untuk mengatur nilai awal dari objek saat pertama kali dibuat.
+Konstruktor juga bisa digunakan untuk menginisialisasi properti dengan nilai yang diberikan saat instansiasi.
+Sintaks yang digunakan dalam penulisan metode ini sebegai berikut:
+
+public function __construct($nama) { $this->nama = $nama; }
+
+d.	Membuat metod getName()
+Metod ini mengembalikan nilai dari atribut nama.
+Sintaks yang digunakan sebagai berikut:
+
+public function getName() { return $this->nama; }
+
+•	Membuat kelas Student yang mewarisi dari Person dan menambahkan atribut studentID serta metode getStudentID()
+a.	Membuat kelas Student yang merupakan kelas turunan dari kelas Person
+Kelas Student mewarisi kelas person sehinggan akan memiliki semua atribut dan metod yang ada di kelas Person.
+Sintaks yang digunakan sebagai berikut:
+
+class Student extends Person {}
+
+b.	Membuat konstruktor
+Konstruktor di kelas Student memanggil konstruktor di kelas person untuk menginisialisasi atribut/properties nama, kemudian menginisialisasi studentID.
+Sintaks yang diguanakan sebagai berikut:
+
+public function __construct($nama, $studentID) { parent::__construct($nama); $this->studentID = $studentID; }
+
+c.	Membuat metod getStudentID()
+Metod getStudentID() berfungsi untuk mengembalikan nilai dari atribut studentID
+Sintaks yang digunakan sebagai berikut:
+
+public function getStudentID() { return $this->studentID; }
+•	Instansiasi dan penggunaan
+a.	Membuat objek student
+Objek student dibuat dengan nama (“Alifia”) dan ID Mahasiswa “2309”
+Sintaks yang digunakan sebagai berikut:
+
+$student1 = new Student("Alifia", "2309");
+
+b.	Memanggil metode
+Memanggil metod getName() untuk menampilkan nama mahasiswa
+Sintaks yang digunakan sebagai berikut:
+
+echo $student1->getName();
+
+Memanggil metod getStudentID() untuk menampilkan ID mahasiswa
+Sintaks yang digunakan sebagai berikut:
+
+echo $student1->getStudentID();
+
+c.	Output 
+Output yang dihasilkan sebagai berikut:
+
+Alifia
+2309
+2.	Polymorphism
+•	Membuat kelas Teacher yang juga mewarisi dari Person dan menambahkan atribut teacherID
+a.	Membuat kelas Person
+Kelas merupakan struktur atau blueprint yang mendefinisikan atribut dan metode yang dimiliki oleh suatu objek.
+Untuk membuat kelas baru, digunakanlah sintaks sebagai berikut:
+
+class Person {}
+
+b.	Membuat protected properties
+
+Atribut atau properties adalah variabel yang menyimpan data untuk untuk objek.
+Protected properties merupakan properties yang hanya dapat di akses di kelas itu sendiri dan kelas turunannya.
+Untuk membuat protected properties, digunakanlah sintaks sebagai berikut:
+
+protected $nama;
+
+c.	Membuat konstruktor
+Konstruktor digunakan untuk mengatur nilai awal dari objek saat pertama kali dibuat.
+Konstruktor juga bisa digunakan untuk menginisialisasi properti dengan nilai yang diberikan saat instansiasi.
+Sintaks yang digunakan dalam penulisan metode ini sebegai berikut:
+
+public function __construct($nama) { $this->nama = $nama; }
+
+d.	Membuat metod getName()
+Metod ini mengembalikan nilai dari atribut nama.
+Sintaks yang digunakan sebagai berikut:
+
+public function getName() { return $this->nama; }
+
+e.	Membuat kelas Student yang merupakan turunan dari kelas Person
+Kelas Students mewarisi kelas Person sehingga dapat menggunakan atribut dan metode dari kelas Person.
+Sintaks yang digunakan sebagai berikut:
+
+class Student extends Person {}
+
+f.	Membuat public properties
+Atribut atau properties adalah variabel yang menyimpan data untuk untuk objek.
+Public properties merupakan properties yang dapat di akses oleh semua kelas.
+Untuk membuat protected properties, digunakanlah sintaks sebagai berikut:
+
+public $studentID;
+
+g.	Membuat konstruktor
+Konstruktor digunakan untuk mengatur nilai awal dari objek saat pertama kali dibuat.
+Konstruktor juga bisa digunakan untuk menginisialisasi properti dengan nilai yang diberikan saat instansiasi.
+Sintaks yang digunakan dalam penulisan metode ini sebagai berikut:
+
+public function __construct($nama, $studentID) { parent::__construct($nama); $this->studentID = $studentID; }
+
+h.	Membuat metod getStudentID()
+Metod ini digunakan untuk mengembalikan nilai studentID
+Sintaks yang digunakan sebagai berikut:
+
+public function getStudentID() { return "Student ID: $this->studentID"; }
+i.	Membuat kelas Teacher yang merupakan turunan dari kelas Person
+Kelas Teacher mewarisi kelas Person sehingga dapat menggunakan atribut dan metod dari kelas Person.
+Sintaks yang digunakan sebagai berikut:
+
+class Teacher extends Person {}
+
+j.	Membuat private properties
+Atribut atau properties adalah variabel yang menyimpan data untuk untuk objek.
+Private properties merupakan properties yang hanya dapat digunakan oleh kelas itu sendiri
+Untuk membuat protected properties, digunakanlah sintaks sebagai berikut:
+
+private $teacherID;
+
+k.	Membuat konstruktor
+Konstruktor digunakan untuk mengatur nilai awal dari objek saat pertama kali dibuat.
+Konstruktor juga bisa digunakan untuk menginisialisasi properti dengan nilai yang diberikan saat instansiasi.
+Sintaks yang digunakan dalam penulisan metode ini sebagai berikut:
+
+public function __construct($nama, $teacherID) { parent::__construct($nama); $this->teacherID = $teacherID; }
+
+l.	Membuat metod getTeacherID()
+Metod ini digunakan untuk mengembalikan nilai teacherID
+Sintaks yang digunakan sebagai berikut:
+
+public function getTeacherID() { return "Teacher ID is: $this->teacherID"; }
+
+•	Override metode getName() di kelas Student dan Teacher untuk menampilkan format berbeda
+a.	Membuat metod getName() pada kelas Teacher
+Metod ini digunakan untuk mengembalikan nilai nama di kelas Teacher.
+Sintaks yang digunakan sebagai berikut:
+
+public function getName() { return "Teacher name is: $this->nama"; }
+
+b.	Membuat metod getName() pada kelas Student
+Metod ini digunakan untuk mengembalikan nilai nama di kelas Student.
+Sintaks yang digunakan sebagai berikut:
+
+public function getName() { return "Student: $this->nama"; }
+•	Instansiasi objek dan penggunaan metod
+Sintaks yang digunakan sebagai berikut:
+
+$student1 = new Student("Alifia", "2309"); echo $student1->getName(); echo "<br>"; echo $student1->getStudentID(); echo "<br>"; $teacher1 = new Teacher("Manda", "2890"); echo $teacher1->getName(); echo "<br>"; echo $teacher1->getTeacherID(); echo "<br>";
+•	Output 
+Output yang dihasilkan sebagai berikut
+
+Student: Alifia
+Student ID: 2309
+Teacher name is: Manda
+Teacher ID is: 2890
+
+3.	Encapsulation
+•	Mengubah atribut nama dan studentID dalam kelas Student menjadi privat
+Atribut atau properties adalah variabel yang menyimpan data untuk untuk objek.
+Private properties merupakan properties yang hanya dapat digunakan oleh kelas itu sendiri
+Untuk membuat protected properties, digunakanlah sintaks sebagai berikut:
+
+private $studentID;
+
+•	Menambahkan metode setter dan getter untuk mengakses dan mengubah nilai atribut nama dan studentID
+a.	Metod setter
+Metod ini digunakan untuk mengubah nilai.
+Sintaks yang digunakan sebagai berikut:
+
+public function setStudentID($studentID) { $this->studentID = $studentID; } 
+public function setName($nama) { $this->nama = $nama; } 
+
+b.	Metod getter
+Metod ini digunakan untuk mengembalikan nilai.
+Sintaks yang digunakan sebagai berikut:
+
+public function getStudentID() { return "Student ID: $this->studentID"; }
+public function getName() { return "Student: $this->nama"; }
+
+•	Instansiasi dan pemanggilan metod
+Sintaks yang digunakan sebagai berikut:
+
+$student1 = new Student("Alifia", "2309"); 
+echo $student1->getName(); echo "<br>"; 
+echo $student1->getStudentID(); 
+echo "<br>"; 
+echo $student1->setName("Ayu"); 
+echo $student1->getName(); 
+echo "<br>"; 
+echo $student1->setStudentID("1309"); 
+echo $student1->getStudentID(); 
+echo "<br>";
+
+•	Output
+Output yang dihasilkan sebagai berikut:
+
+Student: Alifia
+Student ID: 2309
+Student: Ayu
+Student ID: 1309
+
+4.	Abstraction
+•	Membuat kelas abstrak Course dengan metode abstrak getCourseDetails()
+a.	Membuat kelas abstrak Course
+Kelas abstrak Course adalah kelas yang tidak dapat diinstansiasi secara langsung.
+Kelas ini berfungsi sebagai template untuk kelas-kelas turunannya.
+Sintaks yang digunakan sebagai berikut:
+
+abstract class Course{}
+
+b.	Membuat metode abstrak getCourseDetails
+Metod ini bisa diimplementasikan oleh semua kelas turunan.
+Sintaks yang digunakan sebagai berikut:
+
+abstract public function getCourseDetails();
+
+•	Membuat kelas OnlineCourse dan OfflineCourse yang mengimplementasikan getCourseDetails() untuk memberikan detail yang berbeda
+a.	Membuat kelas OnlineCourse
+Kelas ini mewarisi kelas corse sehinggan ia harus mengimplementasikan semua metod abstrak yang didefinisikan oleh kelas induknya.
+Sintaks yang digunakan sebagai berikut:
+
+class OnlineCourse extends Course {}
+
+b.	Implementasi metod getCourseDetails
+Metod ini berfungsi untuk mengembalikan nilai mengenai detail kursus.
+Sintaks yang digunakan sebagai berikut:
+
+public function getCourseDetails() { return "Kursus Online: $this->namaOnline dilakukan pada hari $this->waktuOnline"; }
+
+c.	Membuat kelas OfflineCourse
+Kelas ini mewarisi kelas corse sehinggan ia harus mengimplementasikan semua metod abstrak yang didefinisikan oleh kelas induknya.
+Sintaks yang digunakan sebagai berikut:
+class OfflineCourse extends Course {}
+
+d.	Implementasi metod getCourseDetails
+Metod ini berfungsi untuk mengembalikan nilai mengenai detail kursus.
+Sintaks yang digunakan sebagai berikut:
+
+public function getCourseDetails() { return "Kursus Offline: $this->namaOffline dilakukan di tempat $this->tempatOffline"; }
+
+•	Instansiasi dan penggunaan metod
+getCourseDetails() pada objek online1 mengembalikan detail tentang kursus online, yang kemudian ditampilkan.
+
+getCourseDetails() pada objek offline1 mengembalikan detail tentang kursus offline, yang juga ditampilkan.
+Sintaks yang digunakan sebagai berikut:
+
+$online1 = new OnlineCourse("Privat Al-Faiz", "Minggu"); echo $online1->getCourseDetails(); echo "<br>"; $offline1 = new OfflineCourse("Brain Academy", "Cilacap"); echo $offline1->getCourseDetails(); echo "<br>";
+
+•	Output
+Output yang dihasilkan sebagai berikut:
+
+Kursus Online: Privat Al-Faiz dilakukan pada hari Minggu
+Kursus Offline: Brain Academy dilakukan di tempat Cilacap
+
+B.	Tugas
+1.	Implementasikan kelas Person sebagai induk dari Dosen dan Mahasiswa.
+•	Membuat kelas Person
+•	Membuat kelas Dosen yang merupakan kelas turunan dari kelas Person
+•	Membuat kelas Mahasiswa yang merupakan kelas turunan dari kelas Person
+2.	Gunakan konsep Inheritance untuk membuat hierarki kelas yang memungkinkan Dosen dan Mahasiswa memiliki atribut dan metode yang sesuai dengan perannya.
+•	Membuat metod getInfo() pada kelas Dosen
+•	Membuat metod getInfo() pada kelas Mahasiswa
+3.	Terapkan Polymorphism dengan membuat metode getRole() di kelas Person dan override metode ini di kelas Dosen dan Mahasiswa untuk menampilkan peran yang berbeda.
+•	Membuat metod getRole() pada kelas Person
+•	Membuat metod getRole() pada kelas Dosen
+•	Membuat metod getRole() pada kelas Mahasiswa
+4.	Gunakan Encapsulation untuk melindungi atribut nidn di kelas Dosen dan nim di kelas Mahasiswa.
+•	Membuat metod getter dan setter
+5.	Buat kelas abstrak Jurnal dan implementasikan konsep Abstraction dengan membuat kelas turunan JurnalDosen dan JurnalMahasiswa yang masing-masing memiliki cara tersendiri untuk mengelola pengajuan jurnal
+•	Membuat kelas Jurnal
+•	Membuat kelas JurnalDosen 
+•	Membuat metod pengajuanJurnal pada kelas JurnalDosen
+•	Membuat kelas jurnalMahasiswa
+•	Membuat metod pengajuanJurnal pada kelas JurnalMahasiswa
+•	Output 
+Output yang dihasilkan sebagai berikut:
+
+Info mahasiswa -> Nama = Hafidziyah NIM = 230302082 Jurusan = TI
+Hafidziyah sebagai mahasiswa
+Anin
+240302082
+Info mahasiswa -> Nama = Anin NIM = 240302082 Jurusan = TI
+Info dosen -> Nama = Bagas NIP = 24089 Mata Kuliah = Pancasila
+Bagas sebagai dosen
+Salsa
+240765
+Info dosen -> Nama = Salsa NIP = 240765 Mata Kuliah = Pancasila
+
+Jurnal dengan judul Jurnal Pendidikan yang ditulis oleh Budi telah diajukan pada tanggal 25 Maret 2023
+Jurnal dengan judul Jurnal Ilmiah yang ditulis oleh Arif telah diajukan pada tanggal 27 September 2023
+
+#A.	Penjelasan konsep OOP
+
+1.	Inheritance (pewarisan)
+Inheritance adalah mekanisme di mana sebuah kelas (kelas turunan) dapat mewarisi atribut dan metode dari kelas lain (kelas induk).
+2.	Polymorphism (polimorfisme)
+Polimorfisme memungkinkan objek yang berbeda untuk diperlakukan sebagai objek dari kelas yang sama, biasanya melalui metode yang sama. Dalam OOP, ini sering diimplementasikan melalui method overriding (metode dengan nama yang sama tetapi perilaku berbeda dalam kelas turunan) atau method overloading (metode dengan nama yang sama tetapi parameter berbeda).
+3.	Encapsulation (enkapsulasi)
+Enkapsulasi adalah prinsip untuk menyembunyikan data dan hanya memperbolehkan akses melalui metode yang ditentukan. Biasanya menggunakan modifier akses seperti privat, protected, dan public.
+4.	Abstraction (abstraksi)
+Abstraksi adalah proses menyederhanakan kompleksitas dengan hanya menampilkan fitur penting dari objek dan menyembunyikan detail yang tidak perlu.
 
 
 
